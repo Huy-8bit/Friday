@@ -49,4 +49,3 @@ htmlcov/
 
 # Local environment
 .env
-.env.*
