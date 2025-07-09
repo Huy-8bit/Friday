@@ -26,7 +26,7 @@ def plan_actions(session_history: List[Dict[str, str]], b64_image: str) -> List[
         {
             "role": "user",
             "parts": [
-                "Here is the current screen (resolution: 1920x1080) with grid lines every 100 pixels:",
+                "Here is the current screen (resolution: 1920x1080) with grid lines every 50 pixels:",
                 {
                     "mime_type": "image/png",
                     "data": b64_image,

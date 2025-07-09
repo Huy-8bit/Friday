@@ -22,7 +22,7 @@ SYSTEM_PROMPT: str = (
 
     "Valid actions include:\n"
     "- open_app: { \"type\": \"open_app\", \"app\": \"Slack\" }\n"
-    "- click: { \"type\": \"click\", \"x\": 100, \"y\": 200 }\n"
+    "- click: { \"type\": \"click\", \"x\": 50, \"y\": 200 }\n"
     "- type: { \"type\": \"type\", \"text\": \"hello huy\" }\n"
     "- key: { \"type\": \"key\", \"keys\": \"enter\" }\n"
     "- wait: { \"type\": \"wait\", \"seconds\": 1.5 }\n\n"
@@ -31,7 +31,7 @@ SYSTEM_PROMPT: str = (
     "- Always click input fields or buttons before typing.\n"
     "- Use 'wait' after opening web pages or switching apps.\n"
     "- Avoid repeating actions that didn’t result in changes.\n"
-    "- Use coordinates relative to a 1920x1080 screen with 100px grid lines.\n"
+    "- Use coordinates relative to a 1920x1080 screen with 50px grid lines.\n"
     "- You may assume the user interface is rendered in English.\n\n"
 
     "Examples:\n"
