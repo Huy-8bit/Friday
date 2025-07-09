@@ -1,6 +1,3 @@
-# =========================
-# File: agent_core.py
-# -------------------------
 from __future__ import annotations
 
 import sys
@@ -15,6 +12,8 @@ from utils import try_open_local_app
 
 # Trí nhớ hội thoại giữa user và agent
 chat_history: List[Dict[str, str]] = []
+
+MAX_RETRIES = 3
 
 
 def loop_agent():
@@ -32,6 +31,8 @@ def loop_agent():
 
         step = 1
         prev_actions: List[Dict[str, Any]] = []
+        retries = 0
+
         while True:
             print(f"[STEP {step}] Capturing screen…")
             b64_image, _ = capture_screen()
@@ -54,8 +55,13 @@ def loop_agent():
                 break
 
             if actions == prev_actions:
-                print("[WARN] Agent is stuck in a loop with same actions. Stopping.")
-                break
+                retries += 1
+                if retries >= MAX_RETRIES:
+                    print("[WARN] Agent is stuck in a loop with same actions. Stopping.")
+                    break
+                print(f"[RETRY] Same actions as before. Retrying… ({retries}/{MAX_RETRIES})")
+            else:
+                retries = 0
 
             print("[PLAN]", json.dumps(actions, indent=2, ensure_ascii=False))
             execute_actions(actions)

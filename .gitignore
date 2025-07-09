@@ -49,3 +49,7 @@ htmlcov/
 
 # Local environment
 .env
+
+save.py
+
+save/
