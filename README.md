@@ -48,7 +48,7 @@ pip install -r requirements.txt
 3. **Run the application**:
    Execute the main script to start the interactive loop:
    ```
-   python src/agent.py
+   python src/core_agent.py
    ```
 
 ## Usage
