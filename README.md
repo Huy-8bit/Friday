@@ -7,7 +7,7 @@ The Vision GUI Agent is a Python application that leverages the OpenAI GPT-4o mo
 ```
 agent
 ├── src
-│   ├── agent.py       # Main interactive loop for the application
+│   ├── agent_core.py      # Main interactive loop for the application
 │   ├── brain.py       # Communicates with GPT-4o for action planning
 │   ├── config.py      # Loads configuration settings and API keys
 │   ├── eye.py         # Utilities for capturing the screen
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 3. **Run the application**:
    Execute the main script to start the interactive loop:
    ```
-   python src/core_agent.py
+   python src/agent_core.py
    ```
 
 ## Usage
